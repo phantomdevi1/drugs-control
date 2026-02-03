@@ -47,6 +47,7 @@ $certificateNumber = 'NK-' . str_pad($exam['id'], 6, '0', STR_PAD_LEFT);
 <head>
 <meta charset="UTF-8">
 <title>Сертификат</title>
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 
 <style>
 body {
