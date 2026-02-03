@@ -72,6 +72,13 @@ body {
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.student_header img {
+  width: 50px;
+  margin-left: 5px;
+}
+.header_logo_right {
+  margin-right: 5px;
+}
 .student_header h2 {
   font-size: 20px;
   margin-left: 50px;
@@ -181,7 +188,7 @@ body {
   background-color: #1a3f7c;
 }
 .final_exam_btn {
-  display: inline-block;
+  display: flex;
   background-color: #28a745;
   color: #fff;
   padding: 12px 25px;
@@ -189,6 +196,9 @@ body {
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .final_exam_btn:hover {
@@ -227,6 +237,7 @@ body {
   border-radius: 10px;
   padding: 15px 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -289,6 +300,7 @@ body {
   border-radius: 10px;
   padding: 15px 20px;
   margin-bottom: 15px;
+  margin-top: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 

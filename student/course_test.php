@@ -99,7 +99,9 @@ if ($totalQuestions > 0 && ($correctAnswers / $totalQuestions) >= 0.7) {
 </head>
 <body>
 <header class="student_header">
+    <img src="../img/auth_img.png" alt="">
     <h2>Тест по курсу: <?= htmlspecialchars($course['title']) ?></h2>
+    <img src="../img/auth_img.png" alt="" class="header_logo_right">
 </header>
 
 <div class="student_content">

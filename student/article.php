@@ -64,6 +64,7 @@ if ($checkProgress->get_result()->num_rows === 0) {
 </head>
 <body>
 <header class="student_header">
+    <img src="../img/auth_img.png" alt="">
     <h2><?= htmlspecialchars($user['last_name']) ?> <?= htmlspecialchars($user['first_name']) ?> <?= htmlspecialchars($user['middle_name']) ?></h2>
     <p><?= htmlspecialchars($user['position']) ?>, <?= htmlspecialchars($user['rank']) ?></p>
     <a href="../logout.php">Выйти</a>
@@ -78,19 +79,53 @@ if ($checkProgress->get_result()->num_rows === 0) {
     <h3><?= htmlspecialchars($article['article_title']) ?></h3>
     <p><strong>Тема:</strong> <?= htmlspecialchars($article['topic_title']) ?></p>
 
-    <!-- Контент статьи -->
-    <div class="article_content" style="margin-top: 20px;">
-        <?php if ($article['content_type'] === 'pdf'): ?>
-            <iframe src="../<?= $article['file_path'] ?>" width="100%" height="600px"></iframe>
-        <?php elseif ($article['content_type'] === 'video'): ?>
-            <video width="100%" height="400" controls>
-                <source src="../<?= $article['file_path'] ?>" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
-        <?php else: ?>
-            <p>Контент недоступен</p>
-        <?php endif; ?>
-    </div>
+<!-- Контент статьи -->
+<div class="article_content" style="margin-top: 20px;">
+    <?php if ($article['content_type'] === 'pdf'): ?>
+        <iframe src="../<?= htmlspecialchars($article['file_path']) ?>" width="100%" height="600px"></iframe>
+    <?php elseif ($article['content_type'] === 'video'): ?>
+        <video width="100%" height="400" controls>
+            <source src="../<?= htmlspecialchars($article['file_path']) ?>" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+<?php elseif ($article['content_type'] === 'text'): ?>
+    <?php
+        if (!empty($article['file_path'])) {
+            $filePath = __DIR__ . '/../' . ltrim($article['file_path'], '/');
+        } else {
+            $filePath = '';
+        }
+
+        if ($filePath && file_exists($filePath) && filesize($filePath) > 0) {
+            $textContent = file_get_contents($filePath);
+            echo '<div style="
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+            ">
+                <pre style="
+                    max-width: 800px;
+                    font-size: 20px;
+                    white-space: pre-wrap; 
+                    word-wrap: break-word; 
+                    text-align: left;
+                    line-height: 1.5;
+                ">' . htmlspecialchars($textContent) . '</pre>
+            </div>';
+        } else {
+            echo '<p style="
+                text-align: center; 
+                font-size: 18px; 
+                color: #666; 
+                margin-top: 50px;
+            ">Сейчас эта часть ещё не добавлена</p>';
+        }
+    ?>
+<?php endif; ?>
+
+
+</div>
+
 
 </div>
 </body>

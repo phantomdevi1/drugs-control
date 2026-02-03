@@ -74,6 +74,16 @@ $passedCourses = (int)$passedCoursesStmt->get_result()->fetch_assoc()['passed'];
 
 // Итог
 $allCoursesCompleted = ($totalCourses > 0 && $totalCourses === $passedCourses);
+
+// ===== ПРОВЕРКА, СДАН ЛИ ИТОГОВЫЙ ЭКЗАМЕН =====
+$finalExamStmt = $conn->prepare("
+    SELECT COUNT(*) AS passed_final
+    FROM test_results
+    WHERE user_id = ? AND test_id IS NULL AND passed = 1
+");
+$finalExamStmt->bind_param('i', $userId);
+$finalExamStmt->execute();
+$passedFinal = (int)$finalExamStmt->get_result()->fetch_assoc()['passed_final'] > 0;
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +97,7 @@ $allCoursesCompleted = ($totalCourses > 0 && $totalCourses === $passedCourses);
 <body>
 
 <header class="student_header">
+    <img src="../img/auth_img.png" alt="">
     <h2>
         <?= htmlspecialchars($user['last_name']) ?>
         <?= htmlspecialchars($user['first_name']) ?>
@@ -100,6 +111,14 @@ $allCoursesCompleted = ($totalCourses > 0 && $totalCourses === $passedCourses);
 
     <!-- Итоговый экзамен -->
     <div style="text-align:center; margin-bottom:30px;">
+
+        <?php if ($passedFinal): ?>
+            <!-- Кнопка посмотреть сертификат -->
+            <form action="certificate.php" method="post" style="margin-bottom:10px;" target="_blank">
+                <button type="submit" class="final_exam_btn">Посмотреть сертификат</button>
+            </form>
+        <?php endif; ?>
+
         <a href="<?= $allCoursesCompleted ? 'final_exam.php' : '#' ?>"
            class="final_exam_btn <?= $allCoursesCompleted ? '' : 'disabled' ?>">
             Пройти итоговый экзамен

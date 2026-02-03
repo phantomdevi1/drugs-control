@@ -100,6 +100,7 @@ $allArticlesCompleted = ($totalArticles > 0 && $completedArticles === $totalArti
 </head>
 <body>
 <header class="student_header">
+    <img src="../img/auth_img.png" alt="">
     <h2><?= htmlspecialchars($user['last_name']) ?> <?= htmlspecialchars($user['first_name']) ?> <?= htmlspecialchars($user['middle_name']) ?></h2>
     <p><?= htmlspecialchars($user['position']) ?>, <?= htmlspecialchars($user['rank']) ?></p>
     <a href="../logout.php">Выйти</a>
