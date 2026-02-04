@@ -314,3 +314,219 @@ body {
   margin-bottom: 5px;
   cursor: pointer;
 }
+
+/* admin dashboard */
+.admin-dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+.admin-dashboard__section {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+}
+.admin-dashboard__title {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2a44;
+  border-bottom: 2px solid #1f2a44;
+  padding-bottom: 8px;
+}
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.stats-list__item {
+  background: #f4f6f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stats-list__label {
+  font-size: 14px;
+  color: #555;
+}
+.stats-list__value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2a44;
+  margin-left: 15px;
+}
+.admin-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+.admin-menu__item {
+  background: #f9fafb;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+}
+.admin-menu__link {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2a44;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.admin-menu__link:hover {
+  background: #1f2a44;
+  color: #ffffff;
+}
+
+/* users */
+.users-table-wrapper {
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.users-table th,
+.users-table td {
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  text-align: left;
+}
+
+.users-table__head {
+  background: #1f2a44;
+  color: #ffffff;
+}
+
+.users-table__row:nth-child(even) {
+  background: #f5f7fa;
+}
+
+.users-table__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.btn--edit {
+  background: #4a6fdc;
+}
+
+.btn--edit:hover {
+  background: #3959b8;
+}
+
+.btn--delete {
+  background: #c0392b;
+}
+
+.btn--delete:hover {
+  background: #a93226;
+}
+
+/* user_edit */
+.form__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form__label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form__input,
+.form__select {
+  padding: 10px 12px;
+  border: 1px solid #ccd3da;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form__input:focus,
+.form__select:focus {
+  outline: none;
+  border-color: #1c5d99;
+  box-shadow: 0 0 0 2px rgba(28, 93, 153, 0.15);
+}
+
+/* Роль — на всю ширину */
+.form__field:last-of-type {
+  grid-column: 1 / -1;
+}
+
+/* ===== Кнопки ===== */
+.form__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn--save {
+  background-color: #1c5d99;
+  color: #ffffff;
+}
+
+.btn--save:hover {
+  background-color: #174c7d;
+}
+
+.btn--cancel {
+  background-color: #e0e5ea;
+  color: #333;
+}
+
+.btn--cancel:hover {
+  background-color: #cfd6dd;
+}

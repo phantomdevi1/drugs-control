@@ -12,7 +12,6 @@ if (!isset($_SESSION['role']) || strtolower($_SESSION['role']) !== 'student') {
 }
 
 require '../config.php';
-require '../fpdf/fpdf.php'; // подключаем FPDF (путь к библиотеке)
 
 $userId = $_SESSION['user_id'];
 

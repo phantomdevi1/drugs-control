@@ -43,40 +43,73 @@ $stats['articles'] = $res->fetch_assoc()['count'];
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Админка</title>
+    <title>Административная страница</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<div class="container">
-
-    <header>
-        <h2>Админ: <?= htmlspecialchars($user['last_name']) ?> <?= htmlspecialchars($user['first_name']) ?></h2>
+    <header class="student_header">
+        <img src="../img/auth_img.png" alt="">
+        <h2>
+            <?= htmlspecialchars($user['last_name']) ?>
+            <?= htmlspecialchars($user['first_name']) ?>
+            <?= htmlspecialchars($user['middle_name']) ?>
+        </h2>
         <p><?= htmlspecialchars($user['position']) ?>, <?= htmlspecialchars($user['rank']) ?></p>
         <a href="../logout.php">Выйти</a>
+        <img src="../img/auth_img.png" alt="" class="header_logo_right">
     </header>
+<div class="admin-dashboard">
 
-    <hr>
+    <section class="admin-dashboard__section admin-dashboard__section--stats">
+        <h3 class="admin-dashboard__title">Статистика системы</h3>
 
-    <h3>Статистика системы</h3>
-    <ul>
-        <li>Пользователи: <?= $stats['users'] ?></li>
-        <li>Курсы: <?= $stats['courses'] ?></li>
-        <li>Темы: <?= $stats['topics'] ?></li>
-        <li>Статьи: <?= $stats['articles'] ?></li>
-    </ul>
+        <ul class="stats-list">
+            <li class="stats-list__item">
+                <span class="stats-list__label">Пользователи</span>
+                <span class="stats-list__value"><?= $stats['users'] ?></span>
+            </li>
+            <li class="stats-list__item">
+                <span class="stats-list__label">Курсы</span>
+                <span class="stats-list__value"><?= $stats['courses'] ?></span>
+            </li>
+            <li class="stats-list__item">
+                <span class="stats-list__label">Темы</span>
+                <span class="stats-list__value"><?= $stats['topics'] ?></span>
+            </li>
+            <li class="stats-list__item">
+                <span class="stats-list__label">Статьи</span>
+                <span class="stats-list__value"><?= $stats['articles'] ?></span>
+            </li>
+        </ul>
+    </section>
 
-    <h3>Управление</h3>
-    <ul>
-        <li><a href="users.php">Пользователи</a></li>
-        <li><a href="courses.php">Курсы</a></li>
-        <li><a href="topics.php">Темы</a></li>
-        <li><a href="articles.php">Статьи</a></li>
-        <li><a href="tests.php">Тесты</a></li>
-    </ul>
+    <section class="admin-dashboard__section admin-dashboard__section--management">
+        <h3 class="admin-dashboard__title">Управление системой</h3>
+
+        <ul class="admin-menu">
+            <li class="admin-menu__item">
+                <a class="admin-menu__link" href="users.php">Пользователи</a>
+            </li>
+            <li class="admin-menu__item">
+                <a class="admin-menu__link" href="courses.php">Курсы</a>
+            </li>
+            <li class="admin-menu__item">
+                <a class="admin-menu__link" href="topics.php">Темы</a>
+            </li>
+            <li class="admin-menu__item">
+                <a class="admin-menu__link" href="articles.php">Статьи</a>
+            </li>
+            <li class="admin-menu__item">
+                <a class="admin-menu__link" href="tests.php">Тесты</a>
+            </li>
+        </ul>
+    </section>
 
 </div>
+
 
 </body>
 </html>
