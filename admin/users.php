@@ -49,7 +49,9 @@ $result = $conn->query("
     </div>
     <section class="admin-dashboard__section">
         <h3 class="admin-dashboard__title">Пользователи системы</h3>
-
+        
+            <a href="user_add.php" class="add_users-btn">+ Добавить пользователя</a>
+        
         <div class="users-table-wrapper">
             <table class="users-table">
                 <thead class="users-table__head">
