@@ -294,6 +294,31 @@ body {
 .back_btn:hover {
   background-color: #5a6268;
 }
+.student_iframe {
+  width: 100%;
+  height: 800px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.student_video {
+  width: 100%;
+  height: 500px;
+}
+
+.view_file-btn {
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-decoration: none;
+  background-color: #3959b8;
+  transition: 0.5s;
+  margin-bottom: 30px;
+}
+.view_file-btn:hover {
+  background-color: #172758;
+  transition: 0.5s;
+}
 /* test */
 .question-block {
   background-color: #fff;

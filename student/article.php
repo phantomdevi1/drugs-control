@@ -83,9 +83,9 @@ if ($checkProgress->get_result()->num_rows === 0) {
 <!-- Контент статьи -->
 <div class="article_content" style="margin-top: 20px;">
     <?php if ($article['content_type'] === 'pdf'): ?>
-        <iframe src="../<?= htmlspecialchars($article['file_path']) ?>" width="100%" height="600px"></iframe>
+        <iframe class="student_iframe" src="../<?= htmlspecialchars($article['file_path']) ?>"></iframe>
     <?php elseif ($article['content_type'] === 'video'): ?>
-        <video width="100%" height="400" controls>
+        <video class="student_video" controls>
             <source src="../<?= htmlspecialchars($article['file_path']) ?>" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
@@ -119,7 +119,7 @@ if ($checkProgress->get_result()->num_rows === 0) {
                 font-size: 18px; 
                 color: #666; 
                 margin-top: 50px;
-            ">Сейчас эта часть ещё не добавлена</p>';
+            ">В данный момент этот материал отсутствует.</p>';
         }
     ?>
 <?php endif; ?>

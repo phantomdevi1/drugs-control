@@ -107,15 +107,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label class="form__label">Тип материала</label>
         <select name="content_type" class="form__select">
             <option value="pdf" <?= $article['content_type']=='pdf'?'selected':'' ?>>PDF</option>
-            <option value="txt" <?= $article['content_type']=='txt'?'selected':'' ?>>Текст</option>
             <option value="video" <?= $article['content_type']=='video'?'selected':'' ?>>Видео</option>
         </select>
     </div>
 
     <div class="form__field">
         <label class="form__label">Текущий файл</label>
-        <a href="../<?= $article['file_path'] ?>" target="_blank">
-            Скачать текущий файл
+        <a href="../<?= $article['file_path'] ?>" target="_blank" class="view_file-btn">
+            Посмотреть текущий файл
         </a>
     </div>
 
