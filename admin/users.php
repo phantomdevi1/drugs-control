@@ -46,11 +46,12 @@ $result = $conn->query("
 <div class="admin-dashboard">
     <div style="margin: 20px 0;">
         <a href="dashboard.php" class="back_btn">← Назад</a>
+        <a href="user_add.php" class="add_users-btn">+ Добавить пользователя</a>
     </div>
     <section class="admin-dashboard__section">
         <h3 class="admin-dashboard__title">Пользователи системы</h3>
         
-            <a href="user_add.php" class="add_users-btn">+ Добавить пользователя</a>
+            
         
         <div class="users-table-wrapper">
             <table class="users-table">

@@ -86,9 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </header>
 
 <div class="admin-dashboard">
-
-    <a href="users.php" class="back_btn">← Назад</a>
-
     <?php if ($error): ?>
         <script>alert('<?= htmlspecialchars($error) ?>');</script>
     <?php endif; ?>

@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Редактировать курс</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -70,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label class="form__field">
             <span class="form__label">Описание</span>
-            <textarea name="description" class="form__textarea"><?= htmlspecialchars($course['description']) ?></textarea>
+            <textarea name="description" class="form__textarea" style="min-width: 300px; min-height: 150px;"><?= htmlspecialchars($course['description']) ?></textarea>
         </label>
 
         <label class="form__checkbox">

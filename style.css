@@ -403,6 +403,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  margin-top: 20px;
 }
 
 .users-table th,
@@ -621,4 +622,12 @@ body {
 .courses-table__actions {
   display: flex;
   gap: 5px;
+}
+.topics-table__actions {
+  display: flex;
+  gap: 5px;
+}
+.btn--view {
+  background-color: #1a3f7c;
+  color: #fff;
 }

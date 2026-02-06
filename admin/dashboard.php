@@ -100,9 +100,6 @@ $stats['articles'] = $res->fetch_assoc()['count'];
                 <a class="admin-menu__link" href="topics.php">Темы</a>
             </li>
             <li class="admin-menu__item">
-                <a class="admin-menu__link" href="articles.php">Статьи</a>
-            </li>
-            <li class="admin-menu__item">
                 <a class="admin-menu__link" href="tests.php">Тесты</a>
             </li>
         </ul>

@@ -14,12 +14,12 @@ $result = $conn->query("
     SELECT 
         t.id,
         t.title,
-        t.created_at,
         c.title AS course_title
     FROM topics t
     JOIN courses c ON c.id = t.course_id
-    ORDER BY c.id, t.created_at
+    ORDER BY c.id, t.id
 ");
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -41,7 +41,7 @@ $result = $conn->query("
 
     <div class="admin-dashboard__top">
         <a href="dashboard.php" class="back_btn">← Назад</a>
-        <a href="topic_add.php" class="btn btn--add">+ Добавить тему</a>
+        <a href="topic_add.php" class="add_users-btn">+ Добавить тему</a>
     </div>
 
     <section class="admin-dashboard__section">
@@ -53,7 +53,6 @@ $result = $conn->query("
                     <tr class="topics-table__row">
                         <th>Курс</th>
                         <th>Тема</th>
-                        <th>Дата создания</th>
                         <th>Действия</th>
                     </tr>
                 </thead>
@@ -70,7 +69,6 @@ $result = $conn->query("
                         <tr class="topics-table__row">
                             <td><?= htmlspecialchars($topic['course_title']) ?></td>
                             <td><?= htmlspecialchars($topic['title']) ?></td>
-                            <td><?= date('d.m.Y', strtotime($topic['created_at'])) ?></td>
                             <td class="topics-table__actions">
                                 <a href="articles.php?topic_id=<?= $topic['id'] ?>" class="btn btn--view">
                                     Материалы
