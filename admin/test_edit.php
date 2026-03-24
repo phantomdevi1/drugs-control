@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 <div class="admin-dashboard">
-    <a href="tests.php" class="back_btn">← Назад</a>
+    
 <form method="post" class="form form--admin">
 
     <div class="form__field">

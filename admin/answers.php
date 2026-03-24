@@ -11,6 +11,15 @@ $answers = $conn->query("
     FROM answers
     WHERE question_id = $questionId
 ");
+$question = $conn->query("
+    SELECT test_id FROM questions WHERE id = $questionId
+")->fetch_assoc();
+
+if (!$question) {
+    die('Вопрос не найден');
+}
+
+$testId = (int)$question['test_id'];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -31,7 +40,9 @@ $answers = $conn->query("
 <div class="admin-dashboard">
 
     <div class="admin-dashboard__actions">
-        <a href="tests.php" class="back_btn">← Назад</a>
+        <a href="questions.php?test_id=<?= $testId ?>" class="back_btn">
+    ← Назад
+</a>
             <a href="answer_add.php?question_id=<?= $questionId ?>" class="add_users-btn">
         + Добавить ответ
     </a>

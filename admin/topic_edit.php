@@ -63,9 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </header>
 
 <div class="admin-dashboard">
-  <div class="admin-dashboard__top">
-   <a href="topics.php" class="back_btn">← Назад</a>
-   </div>
+
     <form method="post" class="form form--admin">
         <div class="form__field">
             <label class="form__label">Курс</label>
